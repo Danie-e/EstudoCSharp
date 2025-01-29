@@ -1,9 +1,15 @@
 ﻿
+
 public class Program
 {
     static List<string> listaBandas = new List<string>();
+
     private static void Main(string[] args)
     {
+        listaBandas.Add("U2");
+        listaBandas.Add("Beatles");
+        listaBandas.Add("Lady Gaga");
+
         ExibirOpcoesDoMenu();
     }
 
@@ -27,7 +33,7 @@ public class Program
                 RegistrarBandas();
                 break;
             case 2:
-                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                ExibirBandas();
                 break;
             case 3:
                 Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
@@ -43,6 +49,19 @@ public class Program
                 ExibirOpcoesDoMenu();
                 break;
         }
+    }
+
+    private static void ExibirBandas()
+    {
+        Console.Clear();
+        Console.WriteLine("Exibindo bandas registradas:\n");
+
+        foreach (string nomeBanda in listaBandas)
+            Console.WriteLine($"Banda {nomeBanda}");
+
+        Console.WriteLine("\nDigite uma tecla paa voltar ao menu pricipal");
+        Console.ReadKey();
+        ExibirOpcoesDoMenu();
     }
 
     private static void RegistrarBandas()
