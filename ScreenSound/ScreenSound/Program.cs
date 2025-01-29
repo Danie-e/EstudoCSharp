@@ -1,6 +1,7 @@
 ﻿
 public class Program
 {
+    static List<string> listaBandas = new List<string>();
     private static void Main(string[] args)
     {
         ExibirOpcoesDoMenu();
@@ -50,6 +51,7 @@ public class Program
         Console.WriteLine("Registro de bandas");
         Console.Write("Digite o nome da banda que deseja registrar:");
         string nomeDaBanda = Console.ReadLine()!;
+        listaBandas.Add(nomeDaBanda);
         Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
         Thread.Sleep(2000);
 
