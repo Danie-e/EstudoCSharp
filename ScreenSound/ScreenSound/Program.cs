@@ -18,6 +18,10 @@ public class Program
         Console.WriteLine("Digite 3 para avaliar uma banda.");
         Console.WriteLine("Digite 4 para exibir a média de uma banda.");
         Console.WriteLine("Digite -1 para sair.");
+
+        Console.Write("Digite a sua opção: ");
+        int opcaoEscolhida = int.Parse(Console.ReadLine()!);
+
     }
 
     private static void ExibirMenssagensDeBoasVindas()
