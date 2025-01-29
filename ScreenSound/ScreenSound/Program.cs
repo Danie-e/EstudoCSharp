@@ -1,5 +1,7 @@
 ﻿
 
+using Microsoft.Win32;
+
 public class Program
 {
     static List<string> listaBandas = new List<string>();
@@ -30,9 +32,11 @@ public class Program
         switch (opcaoEscolhida)
         {
             case 1:
+                ExibirTituloDaOpcao(" Registro de bandas ");
                 RegistrarBandas();
                 break;
             case 2:
+                ExibirTituloDaOpcao(" Exibindo bandas registradas: ");
                 ExibirBandas();
                 break;
             case 3:
@@ -53,9 +57,6 @@ public class Program
 
     private static void ExibirBandas()
     {
-        Console.Clear();
-        Console.WriteLine("Exibindo bandas registradas:\n");
-
         foreach (string nomeBanda in listaBandas)
             Console.WriteLine($"Banda {nomeBanda}");
 
@@ -66,8 +67,6 @@ public class Program
 
     private static void RegistrarBandas()
     {
-        Console.Clear();
-        Console.WriteLine("Registro de bandas");
         Console.Write("Digite o nome da banda que deseja registrar:");
         string nomeDaBanda = Console.ReadLine()!;
         listaBandas.Add(nomeDaBanda);
@@ -90,6 +89,19 @@ public class Program
 ";
         Console.WriteLine(mensagemdeBoasVindas);
         Console.WriteLine("Boas vindas ao Screen Sound!\n");
+
+    }
+
+    private static void ExibirTituloDaOpcao(string titulo)
+    {
+        int quantidadeDeLetras = titulo.Length;
+        string asteriscos = string.Empty.PadLeft(quantidadeDeLetras, '*');
+
+        Console.Clear();
+
+        Console.WriteLine(asteriscos);
+        Console.WriteLine($"{titulo}\n");
+        Console.WriteLine(asteriscos);
 
     }
 }
