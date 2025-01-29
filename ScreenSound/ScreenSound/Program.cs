@@ -1,9 +1,4 @@
-﻿
-// Screen Sound
-
-
-
-public class Program
+﻿public class Program
 {
     private static void Main(string[] args)
     {
@@ -19,9 +14,31 @@ public class Program
         Console.WriteLine("Digite 4 para exibir a média de uma banda.");
         Console.WriteLine("Digite -1 para sair.");
 
-        Console.Write("Digite a sua opção: ");
+        Console.Write("\nDigite a sua opção: ");
         int opcaoEscolhida = int.Parse(Console.ReadLine()!);
 
+        switch (opcaoEscolhida)
+        {
+            case 1:
+                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                break;
+            case 2:
+                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                break;
+            case 3:
+                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                break;
+            case 4:
+                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                break;
+            case -1:
+                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                break;
+            default:
+                Console.WriteLine("Valor digitado é invalido.");
+                ExibirOpcoesDoMenu();
+                break;
+        }
     }
 
     private static void ExibirMenssagensDeBoasVindas()
