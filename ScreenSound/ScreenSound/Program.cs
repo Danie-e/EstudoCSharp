@@ -4,13 +4,13 @@ using Microsoft.Win32;
 
 public class Program
 {
-    static List<string> listaBandas = new List<string>();
+    static Dictionary<string, List<int>> dicionarioBandas = new Dictionary<string, List<int>>();
 
     private static void Main(string[] args)
     {
-        listaBandas.Add("U2");
-        listaBandas.Add("Beatles");
-        listaBandas.Add("Lady Gaga");
+        dicionarioBandas.Add("U2",new List<int>());
+        dicionarioBandas.Add("Beatles", new List<int>());
+        dicionarioBandas.Add("Lady Gaga", new List<int>());
 
         ExibirOpcoesDoMenu();
     }
@@ -57,7 +57,7 @@ public class Program
 
     private static void ExibirBandas()
     {
-        foreach (string nomeBanda in listaBandas)
+        foreach (string nomeBanda in dicionarioBandas.Keys)
             Console.WriteLine($"Banda {nomeBanda}");
 
         Console.WriteLine("\nDigite uma tecla paa voltar ao menu pricipal");
@@ -69,7 +69,7 @@ public class Program
     {
         Console.Write("Digite o nome da banda que deseja registrar:");
         string nomeDaBanda = Console.ReadLine()!;
-        listaBandas.Add(nomeDaBanda);
+        dicionarioBandas.Add(nomeDaBanda, new List<int>());
         Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
         Thread.Sleep(2000);
 
