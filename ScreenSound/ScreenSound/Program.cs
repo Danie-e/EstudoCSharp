@@ -8,7 +8,7 @@ public class Program
 
     private static void Main(string[] args)
     {
-        dicionarioBandas.Add("U2", new List<int>());
+        dicionarioBandas.Add("U2", new List<int>() { 2,4,8});
         dicionarioBandas.Add("Beatles", new List<int>());
         dicionarioBandas.Add("Lady Gaga", new List<int>());
 
@@ -32,7 +32,7 @@ public class Program
         switch (opcaoEscolhida)
         {
             case 1:
-                ExibirTituloDaOpcao(" Registro de bandas ");
+                ExibirTituloDaOpcao(" Registro de bandas. ");
                 RegistrarBandas();
                 break;
             case 2:
@@ -40,20 +40,40 @@ public class Program
                 ExibirBandas();
                 break;
             case 3:
-                ExibirTituloDaOpcao(" Avaliar banda ");
+                ExibirTituloDaOpcao(" Avaliar banda. ");
                 AvaliarBanda();
                 break;
             case 4:
-                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                ExibirTituloDaOpcao(" Exibir no geral da banda. ");
+                ExibirMediaBanda();
                 break;
             case -1:
-                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                Console.WriteLine($"Tchau tchau!");
+                Thread.Sleep(1000);
                 break;
             default:
                 Console.WriteLine("Valor digitado é invalido.");
                 ExibirOpcoesDoMenu();
                 break;
         }
+    }
+
+    private static void ExibirMediaBanda()
+    {
+        Console.Write("Digite o nome da banda que deseja saber a nota: ");
+        string nomeBanda = Console.ReadLine()!;
+        if (dicionarioBandas.ContainsKey(nomeBanda))
+        {
+            List<int> notas = dicionarioBandas[nomeBanda];
+            Console.WriteLine($"A nota da banda é de {notas.Average()} pontos.");
+            Thread.Sleep(2000);
+        }
+        else
+        {
+            Console.WriteLine($"A banda {nomeBanda} não foi econtrada. \nDigite uma tecla para voltar ao menu principar.");
+            Console.ReadKey();
+        }
+        ExibirOpcoesDoMenu();
     }
 
     private static void AvaliarBanda()
