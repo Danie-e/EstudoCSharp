@@ -2,27 +2,17 @@
 {
     class Musica
     {
-        public string nome;
-        public string artista;
-        public int duracao;
-        private bool disponivel;
-
-        public void EscreveDisponivel(bool value)
-        {
-            disponivel = value;
-        }
-        public bool EscreveDisponivel()
-        {
-            return disponivel;
-        }
-
+        public string Nome { get; set; } = string.Empty;
+        public string Artista { get; set; } = string.Empty;
+        public int Duracao { get; set; }
+        public bool Disponivel { get; set; }
         public void ExibirFichaTecnica()
         {
             Console.WriteLine($@"
-Nome: {nome}.
-Artista: {artista}.
-Duracao: {duracao}.");
-            if (disponivel)
+Nome: {Nome}.
+Artista: {Artista}.
+Duracao: {Duracao}.");
+            if (Disponivel)
                 Console.WriteLine("Disponivel no plano.");
             else Console.WriteLine("Adquira o plano plus.");
         }

@@ -8,11 +8,11 @@ public class Program
     {
         Musica musica1 = new Musica()
         {
-            nome = "Musica",
-            artista = "teste",
-            duracao = 201,
+            Nome = "Musica",
+            Artista = "teste",
+            Duracao = 201,
+            Disponivel= true
         };
-        musica1.EscreveDisponivel(true);
         musica1.ExibirFichaTecnica();
     }
 
