@@ -11,9 +11,10 @@ public class Program
             Nome = "Musica",
             Artista = "teste",
             Duracao = 201,
-            Disponivel= true
+            Disponivel = true
         };
         musica1.ExibirFichaTecnica();
+        Console.WriteLine(musica1.DescricaoResumida);
     }
 
 
