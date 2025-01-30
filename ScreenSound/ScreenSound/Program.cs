@@ -8,7 +8,7 @@ public class Program
 
     private static void Main(string[] args)
     {
-        dicionarioBandas.Add("U2",new List<int>());
+        dicionarioBandas.Add("U2", new List<int>());
         dicionarioBandas.Add("Beatles", new List<int>());
         dicionarioBandas.Add("Lady Gaga", new List<int>());
 
@@ -40,7 +40,8 @@ public class Program
                 ExibirBandas();
                 break;
             case 3:
-                Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
+                ExibirTituloDaOpcao(" Avaliar banda ");
+                AvaliarBanda();
                 break;
             case 4:
                 Console.WriteLine($"Você escolheu a opção {opcaoEscolhida}");
@@ -53,6 +54,26 @@ public class Program
                 ExibirOpcoesDoMenu();
                 break;
         }
+    }
+
+    private static void AvaliarBanda()
+    {
+        Console.Write("Digite o nome da banda que deseja avaliar: ");
+        string nomeBanda = Console.ReadLine();
+        if (dicionarioBandas.ContainsKey(nomeBanda))
+        {
+            Console.Write("Digite uma nota para a banda: ");
+            int nota = int.Parse(Console.ReadLine()!);
+            dicionarioBandas[nomeBanda].Add(nota);
+            Console.WriteLine($"A nota {nota} foi atribuida com sucesso para a banda {nomeBanda}");
+            Thread.Sleep(2000);
+        }
+        else
+        {
+            Console.WriteLine($"A banda {nomeBanda} não foi registrada. \nDigite uma tecla para voltar ao menu principar.");
+            Console.ReadKey();
+        }
+        ExibirOpcoesDoMenu();
     }
 
     private static void ExibirBandas()
