@@ -1,6 +1,4 @@
-﻿
-
-using Microsoft.Win32;
+﻿using ScreenSound;
 
 public class Program
 {
@@ -8,12 +6,25 @@ public class Program
 
     private static void Main(string[] args)
     {
-        dicionarioBandas.Add("U2", new List<int>() { 2,4,8});
-        dicionarioBandas.Add("Beatles", new List<int>());
-        dicionarioBandas.Add("Lady Gaga", new List<int>());
-
-        ExibirOpcoesDoMenu();
+        Musica musica1 = new Musica()
+        {
+            nome = "Musica",
+            artista = "teste",
+            duracao = 201,
+        };
+        musica1.EscreveDisponivel(true);
+        musica1.ExibirFichaTecnica();
     }
+
+
+    //private static void Main(string[] args)
+    //{
+    //    dicionarioBandas.Add("U2", new List<int>() { 2,4,8});
+    //    dicionarioBandas.Add("Beatles", new List<int>());
+    //    dicionarioBandas.Add("Lady Gaga", new List<int>());
+
+    //    ExibirOpcoesDoMenu();
+    //}
 
     private static void ExibirOpcoesDoMenu()
     {
