@@ -6,13 +6,20 @@ public class Program
 
     private static void Main(string[] args)
     {
+        Album albumQeen=new Album();
+        albumQeen.Nome = "A night at the opera";
+
+
+
         Musica musica1 = new Musica()
         {
-            Nome = "Musica",
-            Artista = "teste",
+            Nome = "Love of my life",
+            Artista = "Queen",
             Duracao = 201,
             Disponivel = true
         };
+
+        albumQeen.AdicionaMusica(musica1 );
         musica1.ExibirFichaTecnica();
         Console.WriteLine(musica1.DescricaoResumida);
     }
