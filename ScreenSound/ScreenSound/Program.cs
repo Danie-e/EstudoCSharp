@@ -6,12 +6,18 @@ public class Program
 
     private static void Main(string[] args)
     {
-        Album albumQeen=new Album();
+        Album albumQeen = new Album();
         albumQeen.Nome = "A night at the opera";
 
-
-
         Musica musica1 = new Musica()
+        {
+            Nome = "Bohemian Rhapsody",
+            Artista = "Queen",
+            Duracao = 300,
+            Disponivel = true
+        };
+
+        Musica musica2 = new Musica()
         {
             Nome = "Love of my life",
             Artista = "Queen",
@@ -19,9 +25,14 @@ public class Program
             Disponivel = true
         };
 
-        albumQeen.AdicionaMusica(musica1 );
-        musica1.ExibirFichaTecnica();
-        Console.WriteLine(musica1.DescricaoResumida);
+        albumQeen.AdicionaMusica(musica1);
+        albumQeen.AdicionaMusica(musica2);
+
+        Banda queen = new Banda();
+        queen.Nome = "Queen";
+        queen.AdicionarAlbum(albumQeen);
+        queen.ExibirDiscografia();
+
     }
 
 
