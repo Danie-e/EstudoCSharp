@@ -6,29 +6,17 @@ public class Program
 
     private static void Main(string[] args)
     {
+        Banda queen = new Banda();
         Album albumQeen = new Album();
         albumQeen.Nome = "A night at the opera";
 
-        Musica musica1 = new Musica()
-        {
-            Nome = "Bohemian Rhapsody",
-            Artista = "Queen",
-            Duracao = 300,
-            Disponivel = true
-        };
+        Musica musica1 = new Musica("Bohemian Rhapsody", queen, 300, true);
 
-        Musica musica2 = new Musica()
-        {
-            Nome = "Love of my life",
-            Artista = "Queen",
-            Duracao = 201,
-            Disponivel = true
-        };
+        Musica musica2 = new Musica("Love of my life", queen, 200, true);
 
         albumQeen.AdicionaMusica(musica1);
         albumQeen.AdicionaMusica(musica2);
 
-        Banda queen = new Banda();
         queen.Nome = "Queen";
         queen.AdicionarAlbum(albumQeen);
         queen.ExibirDiscografia();
