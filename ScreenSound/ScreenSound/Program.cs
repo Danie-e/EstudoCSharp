@@ -7,6 +7,16 @@ public class Program
 
     private static void Main(string[] args)
     {
+        Banda banda = new Banda("Banda Teste");
+        Musica musica = new Musica("Musica Teste", banda);
+        Album album = new Album("Album Teste");
+
+        album.AdicionaMusica(musica);
+        banda.AdicionarAlbum(album);
+        banda.AdicionarNota(Avaliacao.Parse("2"));
+        banda.AdicionarNota(Avaliacao.Parse("4"));
+        listaBandas.Add(banda);
+
         ExibirMenssagensDeBoasVindas();
         ExibirOpcoesDoMenu();
     }
@@ -96,9 +106,9 @@ public class Program
         if (bandaEscolhida != null)
         {
             Console.Write("Digite uma nota para a banda: ");
-            int nota = int.Parse(Console.ReadLine()!);
-            bandaEscolhida.AdicionarNota(new Avaliacao(nota));
-            Console.WriteLine($"A nota {nota} foi atribuida com sucesso para a banda {nomeBanda}");
+            Avaliacao nota = Avaliacao.Parse(Console.ReadLine()!);
+            bandaEscolhida.AdicionarNota(nota);
+            Console.WriteLine($"A nota {nota.Nota} foi atribuida com sucesso para a banda {nomeBanda}");
             Thread.Sleep(2000);
         }
         else
