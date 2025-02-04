@@ -1,9 +1,17 @@
-﻿namespace ScreenSound
+﻿
+
+namespace ScreenSound
 {
     class Banda
     {
+        public Banda(string nome)
+        {
+            Nome = nome;
+        }
+
         public List<Album> albuns = new List<Album>();
-        public string Nome { get; set; }
+        public string Nome { get; }
+        private List<int> notas = new List<int>();
 
         public void AdicionarAlbum(Album album)
         {
@@ -19,5 +27,14 @@
             }
         }
 
+        internal void AdicionarNota(int nota)
+        {
+            notas.Add(nota);
+        }
+
+        internal object MediaNotas()
+        {
+            return notas.Average();
+        }
     }
 }
