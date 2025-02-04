@@ -97,7 +97,7 @@ public class Program
         {
             Console.Write("Digite uma nota para a banda: ");
             int nota = int.Parse(Console.ReadLine()!);
-            bandaEscolhida.AdicionarNota(nota);
+            bandaEscolhida.AdicionarNota(new Avaliacao(nota));
             Console.WriteLine($"A nota {nota} foi atribuida com sucesso para a banda {nomeBanda}");
             Thread.Sleep(2000);
         }
@@ -113,11 +113,11 @@ public class Program
         Console.Write("Digite o nome do Album que deseja visualizar as Musicas: ");
         string nomeAlbum = Console.ReadLine()!;
 
-        Banda bandaEscolhida = listaBandas.Find(i => i.albuns.FirstOrDefault(i => i.Nome.Equals(nomeAlbum)) != null);
+        Banda bandaEscolhida = listaBandas.Find(i => i.Albuns.FirstOrDefault(i => i.Nome.Equals(nomeAlbum)) != null);
 
         if (bandaEscolhida != null)
         {
-            foreach (Album album in bandaEscolhida.albuns)
+            foreach (Album album in bandaEscolhida.Albuns)
             {
                 album.ExibirMusicasAlbum();
                 Thread.Sleep(4000);
@@ -141,7 +141,7 @@ public class Program
 
         if (bandaEscolhida != null)
         {
-            foreach (Album album in bandaEscolhida.albuns)
+            foreach (Album album in bandaEscolhida.Albuns)
             {
                 album.ExibirMusicasAlbum();
                 Thread.Sleep(4000);
@@ -171,7 +171,7 @@ public class Program
             Musica musica = new Musica(nomeMusica, banda);
             Console.Write("Digite o nome do album que a musica pertence: ");
             string nomeAlbum = Console.ReadLine()!;
-            Album album = banda.albuns.FirstOrDefault(i => i.Nome.Equals(nomeAlbum));
+            Album album = banda.Albuns.FirstOrDefault(i => i.Nome.Equals(nomeAlbum));
 
             if (album != null)
             {
