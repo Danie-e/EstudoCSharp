@@ -1,8 +1,8 @@
-﻿namespace ScreenSound
+﻿namespace ScreenSound.Models
 {
     class Album
     {
-       public Album(string nome)
+        public Album(string nome)
         {
             Nome = nome;
         }

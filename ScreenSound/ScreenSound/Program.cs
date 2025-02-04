@@ -1,4 +1,4 @@
-﻿using ScreenSound;
+﻿using ScreenSound.Models;
 
 public class Program
 {
@@ -59,11 +59,11 @@ public class Program
                 ExibirMediaBanda();
                 break;
             case -1:
-                Console.WriteLine($"Tchau tchau!");
+                Console.WriteLine($" Tchau tchau! ");
                 Thread.Sleep(1000);
                 break;
             default:
-                Console.WriteLine("Valor digitado é invalido.");
+                Console.WriteLine(" Valor digitado é invalido. ");
                 ExibirOpcoesDoMenu();
                 break;
         }
@@ -77,7 +77,7 @@ public class Program
         Banda bandaEscolhida = listaBandas.FirstOrDefault(new Banda(nomeBanda));
         if (bandaEscolhida != null)
         {
-            Console.WriteLine($"A nota da banda é de {bandaEscolhida.MediaNotas()} pontos.");
+            Console.WriteLine($"A nota da banda é de {bandaEscolhida.Media} pontos.");
             Thread.Sleep(2000);
         }
         else
