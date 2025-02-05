@@ -4,7 +4,7 @@
     {
         public override void Executar(List<Banda> listaBandas)
         {
-            ExibirTituloDaOpcao(" Avaliar musica. ");
+            ExibirTituloDaOpcao(" Avaliar banda. ");
 
             Console.Write("Digite o nome da banda que deseja avaliar: ");
             string nomeBanda = Console.ReadLine()!;

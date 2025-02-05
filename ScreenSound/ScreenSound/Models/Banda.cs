@@ -1,6 +1,6 @@
 ﻿namespace ScreenSound.Models
 {
-    internal class Banda
+    internal class Banda : IAvaliavel
     {
         public Banda(string nome)
         {
@@ -10,7 +10,7 @@
         private List<Avaliacao> notas = new List<Avaliacao>();
         public List<Album> Albuns = new List<Album>();
         public string Nome { get; }
-        public double Media => notas.Count == 0 ? 0 : notas.Average(a => a.Nota);
+        public double Media => notas.Count == 0 ? 0 : notas.Average(i => i.Nota);
 
         public void AdicionarAlbum(Album album)
         {

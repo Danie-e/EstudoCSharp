@@ -39,7 +39,7 @@ public class Program
         Console.WriteLine("Digite 3 para registrar uma Musica.");
         Console.WriteLine("Digite 4 para mostrar todas os albuns de um artista.");
         Console.WriteLine("Digite 5 para mostrar todas as musicas de uma banda.");
-        Console.WriteLine("Digite 6 para avaliar uma musica.");
+        Console.WriteLine("Digite 6 para avaliar uma banda.");
         Console.WriteLine("Digite 7 para exibir a média de uma banda.");
         Console.WriteLine("Digite -1 para sair.");
 
